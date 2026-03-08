@@ -238,7 +238,7 @@ void FlutterScreenCapture::GetDisplayMedia(
   }
 
   scoped_refptr<RTCDesktopCapturer> desktop_capturer =
-      base_->desktop_device_->CreateDesktopCapturer(source);
+      base_->desktop_device_->CreateDesktopCapturer(source, false);  // Hide cursor
 
   if (!desktop_capturer.get()) {
     result->Error("Bad Arguments", "CreateDesktopCapturer failed!");
